@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DisplayName("Класс Person должен: ")
@@ -14,6 +15,7 @@ public class PersonTest {
     private static final int DEFAULT_AGE = 15;
     private static final String NEW_NAME = "Та же Наташа";
     private static final int NEW_AGE = 20;
+
 
 
     @DisplayName(" корректно создаваться конструктором")
