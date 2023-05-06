@@ -4,6 +4,6 @@ public class Man implements Walkable{
 
     @Override
     public void walk() {
-        System.out.println("Ходи!");
+        System.out.println("Человек ходит");
     }
 }

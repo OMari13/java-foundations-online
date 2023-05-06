@@ -3,7 +3,7 @@ package ru.itsjava.interfaces;
 public class Fish implements Swimable {
     @Override
     public void swim() {
-        System.out.println("Плыви!");
+        System.out.println("Рыба плавает");
     }
 
     @Override

@@ -18,5 +18,8 @@ public class InterfacesHW {
         bird.fly();
         bird.flyMaxDistance();
 
+        Runnable dog = new Dog();
+        dog.run();
+        dog.maxRunDistance();
     }
 }

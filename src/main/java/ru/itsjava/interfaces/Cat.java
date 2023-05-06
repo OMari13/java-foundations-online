@@ -4,7 +4,7 @@ public class Cat implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("Беги!");
+        System.out.println("Кот бежит");
     }
     @Override
     public int maxRunDistance() {
