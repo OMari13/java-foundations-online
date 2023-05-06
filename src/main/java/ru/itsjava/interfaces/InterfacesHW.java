@@ -21,6 +21,5 @@ public class InterfacesHW {
         Runnable dog = new Dog();
         dog.run();
         dog.maxRunDistance();
-
     }
 }
