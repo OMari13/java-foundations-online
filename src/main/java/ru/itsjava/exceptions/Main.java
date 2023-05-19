@@ -1,6 +1,6 @@
 package ru.itsjava.exceptions;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
 
         Person person = new Person("Маша", 154);
