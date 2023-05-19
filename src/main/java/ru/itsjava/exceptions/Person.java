@@ -7,8 +7,8 @@ import lombok.Data;
 @AllArgsConstructor
 public class Person {
 
-    public String name;
-    public int age;
+    private String name;
+    private int age;
 
     public int getAge() {
         if (age < 0 || age > 150) {
