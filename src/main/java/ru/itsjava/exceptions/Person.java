@@ -9,13 +9,13 @@ public class Person {
 
     public String name;
     public int age;
-    public int getAge() {
 
-        try {
-            return age/0;
+    public int getAge() {
+        if (age < 0 || age > 150) {
+           throw new AgeNotValidException("Возраст некорректен");
+        } else {
+            System.out.println("Возраст корректен");
         }
-        catch (ArithmeticException arithmeticException) {
-            throw new AgeNotValidException("Возраст нельзя делить на ноль");
-        }
+        return 0;
     }
 }
