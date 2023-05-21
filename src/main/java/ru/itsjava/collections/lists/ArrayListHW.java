@@ -6,9 +6,9 @@ import java.util.List;
 public class ArrayListHW {
     public static void main(String[] args) {
 
-
         //0. Создание списков: (Используя конструктор)
         //а). Создать пустой список книг
+
         List<Book> bookEmptyList = new ArrayList<>();
 
 
