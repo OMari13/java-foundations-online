@@ -146,11 +146,11 @@ public class ArrayListHW {
         //8. Вернуть первый подходящий элемент:
         //а) Возвращаем первую книгу, длина автора которого делится на 3.
         System.out.println("Возвращаем первую книгу, длина автора которого делится на 3");
-        int count = 0;
+
         for (int i = 0; i < bookList.size(); i++) {
-            if (bookList.get(i).getAuthor().length() % 3 == 0 && count == 0) {
-                count++;
+            if (bookList.get(i).getAuthor().length() % 3 == 0 ) {
                 System.out.println(bookList.get(i));
+                break;
             }
         }
         System.out.println();
