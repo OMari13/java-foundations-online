@@ -45,6 +45,5 @@ public class MyArrayListPractice {
 //        System.out.println("array.length = " + array.length);
 //        System.out.println("array[0] = " + array[0]);
 
-
     }
 }
