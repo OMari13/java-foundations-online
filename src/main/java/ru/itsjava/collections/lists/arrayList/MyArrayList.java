@@ -29,9 +29,9 @@ public class MyArrayList {
 //        return realSize == 0;
     }
 
-    public boolean contains() {
+    public boolean contains(Object o) {
         for (int i = 0; i < realSize; i++) {
-            if (array[i].equals("Пока")) {
+            if (array[i].equals(o)) {
                 return true;
             }
         }
