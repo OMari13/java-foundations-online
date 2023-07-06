@@ -21,12 +21,12 @@ public class MyArrayList {
 //            }
 //        }
 //        return true;
-        if (realSize == 0) {
-            return true;
-        } else {
-            return false;
-        }
-//        return realSize == 0;
+//        if (realSize == 0) {
+//            return true;
+//        } else {
+//            return false;
+//        }
+        return realSize == 0;
     }
 
     public boolean contains(Object o) {
@@ -75,30 +75,47 @@ public class MyArrayList {
 
     public void clear() {
         for (int i = 0; i < array.length; i++) {
-            if (array[i] != null){
-                realSize = 0;
-            }
+            array[i] = null;
         }
+        realSize = 0;
     }
 
     public Object get(int index) {
+        for (int i = 0; i < realSize; i++) {
+            if (index == i) {
+                return index;
+            }
+        }
         return null;
     }
 
     public Object set(int index, Object element) {
-        return null;
+        return array[index] = element;
     }
 
-    public void add(int index, Object element) {
 
+    public void add(int index, Object element) {  //как-то само получилось с помощью гугла и тыкания))), хочу теперь понять логику
+        if (realSize >= array.length) {
+            Object[] newArray = new Object[array.length * 3 / 2 + 1];
+            //копирование массива
+            System.arraycopy(array, 0, newArray, 0, array.length);
+            array = newArray;
+            //вставка нашего элемента
+        }
+        for (int i = realSize; i >= index; i--) {
+            array[i + 1] = array[i];
+        }
+        array[index] = element;
+        realSize++;
     }
+
 
     public Object remove(int index) {
         checkIndex(index);
 
         Object resElement = array[index];
         if (array.length - 1 - index >= 0) {
-            System.arraycopy(array, index + 1, array, index, array.length -1 - index);
+            System.arraycopy(array, index + 1, array, index, array.length - 1 - index);
         }
         realSize--;
         return resElement;
@@ -118,18 +135,30 @@ public class MyArrayList {
         return false;
     }
 
-    public int indexOf(Object o) {
+    public int indexOf(Object o) { //получаем индекс первого совпадения
+        for (int i = 0; i < realSize; i++) {
+            if (array[i].equals(o)) {
+                return i;
+            }
+        }
         return 0;
     }
 
-    public int lastIndexOf(Object o) {
-        return 0;
+    public int lastIndexOf(Object o) { //тут тоже возникли вопросы, как-то плучилось вроде бы, но некоторые моменты не понимаю
+        int lastIndex = -1;
+        for (int i = 0; i < realSize; i++) {
+            if (array[i].equals(o)) {
+                lastIndex = i;
+            }
+        }
+        return lastIndex;
     }
+
 
     @Override
     public String toString() {
 //        return "MyArrayList{" + Arrays.toString(array) + '}';
-        StringBuilder stringBuilder = new StringBuilder("MyArrayList{");
+        StringBuilder stringBuilder = new StringBuilder("MyArrayList {");
         for (int i = 0; i < realSize; i++) {
             stringBuilder.append(array[i]).append(" ");
         }
